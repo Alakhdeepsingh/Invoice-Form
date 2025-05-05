@@ -87,7 +87,7 @@ export default function InvoiceForm() {
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
-                        alert('Form submitted!');
+                        // alert('Form submitted!');
                         console.log(values);
                     }}
                 >
