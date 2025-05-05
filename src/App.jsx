@@ -1,20 +1,16 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router and Routes components
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import LoginForm from './Components/Auth/LoginForm';
 import InvoiceForm from './Components/Form/InvoiceForm';
 
-// Import necessary pages/components
-
-
 function App() {
   return (
     <Router>
-      {/* <div> */}
       <Routes>
-        <Route path="/login" element={<LoginForm />} /> {/* Login Page Route */}
-        <Route path="/invoice-form" element={<InvoiceForm />} /> {/* Invoice Form Page Route */}
+        <Route path="/" element={<Navigate to="/login" replace />} /> {/* Redirect root to /login */}
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/invoice-form" element={<InvoiceForm />} />
       </Routes>
-      {/* </div> */}
     </Router>
   );
 }
