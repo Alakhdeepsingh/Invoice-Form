@@ -1,0 +1,55 @@
+.price-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* background: #f9f9f9; */
+  padding: 8px 12px;
+  border-radius: 999px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  width: fit-content;
+  font-family: Arial, sans-serif;
+}
+
+.price-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.primary-price {
+  color: #444;
+  font-weight: 500;
+}
+
+.secondary-price {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.toggle-switch {
+  display: flex;
+  background: #e0e0e0;
+  border-radius: 999px;
+  padding: 0px;
+}
+
+.toggle-button {
+  width: 32px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-button.active {
+  background-color: #007bff;
+  color: white;
+}
