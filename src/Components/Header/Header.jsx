@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // <-- import this
 import './Header.css';
 
-const Header = () => {
+const Header = ({ setIsLoggedIn, fillWithDummyData }) => {
     const [activeTab, setActiveTab] = useState('Vendor Details');
     const navigate = useNavigate(); // <-- initialize navigate
     const tabs = ['Vendor Details', 'Invoice Details', 'Comments'];
 
     const handleLogout = () => {
         localStorage.removeItem('user'); // <-- clear user data
+        setIsLoggedIn(false);
         navigate('/login'); // <-- redirect to login page
     };
 
@@ -43,7 +44,7 @@ const Header = () => {
                 ))}
             </div>
             <div className='header-actions'>
-                <button type="dummy-data">Fill with dummy data</button>
+                <button type="dummy-data" onClick={fillWithDummyData}>Fill with dummy data</button>
                 <button className="logout-button" onClick={handleLogout}>Logout</button>
             </div>
         </div>

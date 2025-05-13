@@ -2,18 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css'; // ✅ Import CSS
 
-const LoginForm = () => {
+const LoginForm = ({ setIsLoggedIn }) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        const session = localStorage.getItem('user');
-        if (session) {
-            navigate('/invoice-form');
-        }
-    }, [navigate]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,6 +17,7 @@ const LoginForm = () => {
         }
 
         localStorage.setItem('user', JSON.stringify({ email }));
+        setIsLoggedIn(true);
         navigate('/invoice-form');
     };
 

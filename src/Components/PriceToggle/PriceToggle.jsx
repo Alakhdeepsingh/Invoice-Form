@@ -13,12 +13,14 @@ export default function PriceToggle() {
 
             <div className="toggle-switch">
                 <button
+                    type="button"
                     className={`toggle-button ${toggle === "dollar" ? "active" : ""}`}
                     onClick={() => setToggle("dollar")}
                 >
                     $
                 </button>
                 <button
+                    type="button"
                     className={`toggle-button ${toggle === "percent" ? "active" : ""}`}
                     onClick={() => setToggle("percent")}
                 >
